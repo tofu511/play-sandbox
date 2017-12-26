@@ -1,0 +1,32 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index
+GET     /message                    controllers.MessageController.index
+GET     /login                      controllers.LoginController.index
+POST    /login                      controllers.LoginController.login
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+# GET     /echo                       controllers.EchoController.echo
+GET     /echo1                      controllers.EchoController1.echo1
+GET     /echo1a                     controllers.EchoController1.echo1a
+POST    /echo2                      controllers.EchoController1.echo2
+GET     /echo3                      controllers.EchoController1.echo3
+# GET     /echo4                      controllers.EchoController2.echo
+
+# 特定のURLにリダイレクトする
+GET   /about      controllers.Default.redirect(to = "https://www.playframework.com/")
+
+# 404 Not Foundを返す
+GET   /orders     controllers.Default.notFound
+
+# 500 Internal Server Errorを返す
+GET   /clients    controllers.Default.error
+
+# 501 Not Implementedを返す
+GET   /posts      controllers.Default.todo

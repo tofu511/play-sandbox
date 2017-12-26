@@ -1,0 +1,18 @@
+@import forms.Login
+@(form: Form[Login])(implicit messages: Messages)
+
+@main("ログイン"){
+
+    <!-- フォームが持つグローバルエラーを描画する -->
+    @form.globalError.map { error =>
+        @error.message
+    }
+
+    @helper.form(action = routes.LoginController.login) {
+        @helper.inputText(form("email"))
+        @helper.inputPassword(form("password"))
+        <input type="submit" value="Login">
+
+    }
+
+}

@@ -1,0 +1,9 @@
+@(userOpt: Option[User])
+
+@echo_main("Welcome to Play") {
+  <h1>Welcome to Play!</h1>
+  <span>@userOpt.toString</span>
+  @if(userOpt.isEmpty) {
+    <a href="@routes.LoginController.index">Login</a>
+  }
+}
