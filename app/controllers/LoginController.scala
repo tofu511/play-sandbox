@@ -48,4 +48,9 @@ class LoginController @Inject()(override val messagesApi: MessagesApi) extends C
         }
       )
   }
+
+  // ログアウトする(GET)
+  def logout = Action { implicit request =>
+    Redirect(routes.HomeController.index()).withNewSession
+  }
 }

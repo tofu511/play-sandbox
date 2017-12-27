@@ -2,6 +2,7 @@ package controllers
 
 import javax.inject._
 import play.api._
+import play.api.i18n._
 import play.api.mvc._
 import models.User
 
@@ -10,7 +11,7 @@ import models.User
   * application's home page.
   */
 @Singleton
-class HomeController @Inject() extends Controller {
+class HomeController @Inject()(override val messagesApi: MessagesApi) extends Controller with I18nSupport {
 
   /**
     * Create an Action to render an HTML page.
