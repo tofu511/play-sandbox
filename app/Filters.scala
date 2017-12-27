@@ -11,6 +11,6 @@ import play.filters.hosts.AllowedHostsFilter
   *
   * https://www.playframework.com/documentation/latest/ScalaCsrf
   */
-//class Filters @Inject()(
-//    csrfFilter: CSRFFilter
-//) extends DefaultHttpFilters(csrfFilter)
+class Filters @Inject()(
+    csrfFilter: CSRFFilter
+) extends DefaultHttpFilters(csrfFilter)

@@ -1,5 +1,5 @@
 @import b3.vertical.fieldConstructor
-@(form: Form[Login])(implicit messages: Messages)
+@(form: Form[Login])(implicit messages: Messages, request: RequestHeader)
 
 @main("ログイン"){
 
@@ -10,7 +10,7 @@
         </div>
     }
 
-    @b3.form(routes.LoginController.login, 'class -> "form-signin") {
+    @b3.formCSRF(routes.LoginController.login, 'class -> "form-signin") {
         <h2 class="form-signin-heading">Please sign in</h2>
         @b3.email(form("email"), '_label -> "Email", 'placeholder -> "example@mail.com")
         @b3.password(form("password"), '_label -> "Password", 'placeholder -> "Password")

@@ -14,7 +14,7 @@ class HomeControllerSpec extends PlayFunSpec with GuiceOneAppPerTest {
 
   describe("HomeController") {
     it("should render the index page from a new instance of controller") {
-      val controller = new HomeController
+      val controller = inject[HomeController]
       val home       = controller.index().apply(FakeRequest())
 
       status(home) mustBe OK

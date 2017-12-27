@@ -22,7 +22,7 @@ class LoginController @Inject()(override val messagesApi: MessagesApi) extends C
   )
 
   // ログインページを描画(GET)
-  def index: Action[AnyContent] = Action {
+  def index: Action[AnyContent] = Action { implicit request =>
     Ok(views.html.login(form))
   }
 
